@@ -38,16 +38,68 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: center;
+    /* position: center; */
     text-align: center;
 }
 
-h3{
+/* h3{
     color: FFFFFF;
     max-width: 70%;
     font-size: 30px;
     font-weight: 400;
+} */
+
+.right_h_1, .right_v, .right_h_2 {
+    /* background-color: blue; */
+    /* align-items: ; */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    row-gap: 30px;
 }
+
+.right_h_1, .right_h_2 {
+    align-items: flex-end;
+    /* background-color: green; */
+    
+}
+
+.right_v{
+    align-items: flex-start;
+    /* background-color: pink; */
+}
+
+#h_1, #h_2, #h_4 {
+    background-color: rgb(68, 68, 245);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+
+}
+
+#info_1, #info_2, #info_3 {
+    color: white;
+    /* background-color: brown; */
+    max-width: 70%;
+    font-size: 30px;
+    font-weight: 400;
+}
+
+
+#info_1 {
+    margin-bottom: 30px;
+}
+
+#info_2 {
+    margin: 30px 0px;
+}
+
+#info_3 {
+    margin-top: 30px;
+}
+
+
 
 @font-face {
     font-family: Signika_light;
