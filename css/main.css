@@ -190,13 +190,17 @@ body{
     flex-direction: column;
 }
 
+#wrapper_4_out {
+    color: D9D9D9;
+}
 
 /* Opprett en konto side slutt */
 
 
-#Sign_up_a, #Log_in_a {
+#Sign_up_p, #Log_in_p {
     /* background-color: rgb(111, 111, 198);  */
     padding: 15px 35px;
+    margin: 0px;
     border-radius: 15px;
     text-decoration: none;
     color: D9D9D9;
@@ -204,7 +208,7 @@ body{
     font-size: 30px;
 }
 
-#Sign_up_a:hover, #Log_in_a:hover { 
+#Sign_up_p:hover, #Log_in_p:hover { 
     background-color: D9D9D9;
     color: 605F5E;
 }
