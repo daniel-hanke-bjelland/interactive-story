@@ -66,6 +66,7 @@ const historie = [
     ],
     thoughts: [
       {
+        position: "left",
         text: "What are they doing?",
       },
       {
@@ -170,21 +171,46 @@ function loadSubText(subtext) {
   }
 }
 
+function loadThoughts(thoughts) {
+    let h1 = document.getElementById("h_1");
+    let h2 = document.getElementById("h_2");
+    // let h3 = document.getElementById("h_3");
+    let h4 = document.getElementById("h_4");
+    let h5 = document.getElementById("h_5");
+
+    // elements.innerHTML= ""
+
+    h1.innerHTML = "";
+    h2.innerHTML = "";
+    h4.innerHTML = "";
+    h5.innerHTML = "";
+
+    const elements = [h1, h2, h4, h5];
+
+
+    for (let index = 0; index < thoughts.length; index++) {
+        elements[index].innerHTML += `<p>${thoughts[index].text}</p>`
+        
+    }
+
+}
+
 
 function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
   let subtext = scene.subtext;
+  let thoughts = scene.thoughts;
 
-  loadSubText(subtext);
+  if (scene.subtext.length > 0) {
+      loadSubText(subtext);
+  } 
 
-  if(scene.thoughts) {
-      loadThoughts()
-
+  if(scene.thoughts.length > 0) {
+      loadThoughts(thoughts)
   }
 
-  if(scene.talk) {
-      loadTalk()
-
+  if(scene.talk.length > 0) {
+    //   loadTalk()
   }
 
   if (!scene.choices) {
@@ -198,3 +224,5 @@ function loadScene(sceneNumber) {
 }
 
 loadScene(0);
+
+// loadThoughts(0);
