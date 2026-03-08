@@ -66,7 +66,7 @@ const historie = [
     ],
     thoughts: [
       {
-        position: "left",
+        // position: "left",
         text: "What are they doing?",
       },
       {
@@ -195,22 +195,65 @@ function loadThoughts(thoughts) {
 
 }
 
+function loadTalk(talk) {
+  let v1 = document.getElementById("v_1");
+  let v2 = document.getElementById("v_2");
+  let v3 = document.getElementById("v_3");
+
+  v1.innerHTML = "";
+  v2.innerHTML = "";
+  v3.innerHTML = "";
+
+  const elements = [v1, v2, v3]
+
+  for (let index = 0; index < talk.length; index++) {
+    elements[index].innerHTML += `<p>${talk[index].text}</p>`
+  } 
+}
+
 
 function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
+  let talk = scene.talk;
 
   if (scene.subtext.length > 0) {
       loadSubText(subtext);
-  } 
+  } else {
+    let i1 = document.getElementById("info_1");
+    let i2 = document.getElementById("info_2");
+    let i3 = document.getElementById("info_3");
+
+    i1.innerHTML = "";
+    i2.innerHTML = "";
+    i3.innerHTML = "";
+  }
 
   if(scene.thoughts.length > 0) {
       loadThoughts(thoughts)
+  } if (scene.thoughts.length <= 0) {
+    let h1 = document.getElementById("h_1");
+    let h2 = document.getElementById("h_2");
+    let h4 = document.getElementById("h_4");
+    let h5 = document.getElementById("h_5");
+
+    h1.innerHTML = "";
+    h2.innerHTML = "";
+    h4.innerHTML = "";
+    h5.innerHTML = "";
   }
 
   if(scene.talk.length > 0) {
-    //   loadTalk()
+      loadTalk(talk)
+  } if (scene.talk.length <= 0) {
+    let v1 = document.getElementById("v_1");
+    let v2 = document.getElementById("v_2");
+    let v3 = document.getElementById("v_3");
+
+    v1.innerHTML = "";
+    v2.innerHTML = "";
+    v3.innerHTML = "";
   }
 
   if (!scene.choices) {
@@ -221,6 +264,7 @@ function loadScene(sceneNumber) {
   } else {
     //add buttons with an onclick to handle which scene to go to
   }
+
 }
 
 loadScene(0);
