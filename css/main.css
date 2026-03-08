@@ -63,7 +63,7 @@ body{
 }
 
 
-.left, .right {
+.left, #right {
     width: 40%;
     height: 80%;
     /* border: 1px black solid; */
@@ -87,7 +87,87 @@ body{
     align-items: center;
     /* position: center; */
     text-align: center;
+    /* border: 1px solid black ; */
 }
+
+/* Tester nytt start */
+#right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    /* position: center; */
+    /* text-align: center; */
+    /* border: 1px solid black ; */
+    gap: 30px;
+}
+
+.subtext {
+    /* background-color: white; */
+    /* text-align: left; */
+    color: white;
+    /* background-color: brown; */
+    max-width: 70%;
+    font-size: 30px;
+    font-weight: 400;
+    text-align: center;
+    /* margin: 0px auto; */
+}
+
+.thoughts, .talk {
+    color: #30011E;
+    font-size: 18px;
+    padding: 20px 25px;
+    border-radius: 10px;
+    max-width: 40%;
+}
+
+.thoughts {
+    border: 2px dashed #30011E;
+}
+
+[data-person="William"] {
+    background-color: #B5C9D1;
+}
+
+[data-person="Girl"] {
+    background-color: #DFABA9;
+}
+
+[data-person="Jacob"] {
+    background-color: #DADADA;
+}
+
+[data-person="Boy"] {
+    background-color: #80D19B;
+}
+
+#h_left{
+    margin: 0px auto;
+}
+
+#nr_1 {
+    order: 1;
+}
+
+#nr_2 {
+    order: 2;
+}
+
+#nr_3 {
+    order: 3;
+}
+
+#nr_4 {
+    order: 4;
+}
+
+#nr_5 {
+    order: 5;
+}
+
+/* Tester nytt slutt */
+
 
 /* h3{
     color: FFFFFF;
