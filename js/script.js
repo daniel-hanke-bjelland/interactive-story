@@ -37,6 +37,9 @@ function opppretKonto() {
   }
 }
 
+let usersName = JSON.parse(localStorage.getItem("bruker"));
+console.log(usersName);
+
 const historie = [
   {
     id: 1,
@@ -44,7 +47,7 @@ const historie = [
     // description: "Lorem ipsum",
     subtext: [
       {
-        text: "Welcomme Ola Nordman!",
+        text: `Welcomme ${usersName.navn}!`,
         id: "nr_1",
         position: "center"
       },
