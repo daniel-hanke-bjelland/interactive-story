@@ -43,7 +43,7 @@ console.log(usersName);
 const historie = [
   {
     id: 1,
-    image: "../img/Hovedperson går.png",
+    image: "../img/hovedperson_går.png",
     // description: "Lorem ipsum",
     subtext: [
       {
@@ -62,7 +62,7 @@ const historie = [
   },
   {
     id: 2,
-    image: "../img/Frieri.png",
+    image: "../img/frieri.png",
     subtext: [
       {
         text: "William walks past a couple who are getting engaged. Ola Nordman!",
