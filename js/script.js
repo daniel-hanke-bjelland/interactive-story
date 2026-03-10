@@ -100,7 +100,7 @@ const historie = [
   },
   {
     id: 3,
-    image: "../img/På benken_2.png",
+    image: "../img/pa_benken_2.png",
     subtext: [
       {
         text: "After a short while, he sees a bench with a free space next to a girl. He sits down.",
@@ -120,7 +120,7 @@ const historie = [
   },
   {
     id: 4,
-    image: "../img/På benken_3.png",
+    image: "../img/pa_benken_3.png",
     subtext: [
       {
         text: "Suddenly, the person next to him starts to cry.",
@@ -140,7 +140,7 @@ const historie = [
   },
   {
     id: 5,
-    image: "../img/På benken_3.png",
+    image: "../img/pa_benken_3.png",
     subtext: [
       {
         text: "William thinks:",
@@ -172,7 +172,7 @@ const historie = [
   },
   {
     id: 6,
-    image: "../img/På benken_3.png",
+    image: "../img/pa_benken_3.png",
     subtext: [
       {
         text: "Choice: Should William try to comfort her?",
@@ -202,102 +202,31 @@ const historie = [
 // let området = document.getElementById("right");
 
 let historieOmrådet = document.getElementById("right");
-let bildeOmrådet = document.getElementsByClassName("left").innerHTML;
+let bildeOmrådet = document.getElementsByClassName("left")[0];
 
-function loadSubText(subtext) {
-  // let i1 = document.getElementById("info_1");
-  // let i2 = document.getElementById("info_2");
-  // let i3 = document.getElementById("info_3");
-  
-  // i1.innerHTML = "";
-  // i2.innerHTML = "";
-  // i3.innerHTML = "";
-  
-  // const elements = [området]; // add all your elements here
-  
-  // for (let index = 0; index < subtext.length; index++) {
-  //   elements[index].innerHTML += `<h3>${subtext[index].text}</h3>`;
-  // }
+console.log(bildeOmrådet)
 
 
-  for (let i = 0; i < subtext.length; i++) {
+
+
+
+
+
+
+function marginStyle(element, type) {
+
+ for (let i = 0; i < element.length; i++) {
   let marginStyle = "0 auto 0 0"; 
 
-  if (subtext[i].position === "right") {
+  if (element[i].position === "right") {
     marginStyle = "0 0 0 auto"; 
-  } else if (subtext[i].position === "center") {
+  } else if (element[i].position === "center") {
     marginStyle = "0 auto";
   }
 
   historieOmrådet.innerHTML += `
-    <p class="subtext" id="${subtext[i].id}" style="margin: ${marginStyle};">
-      ${subtext[i].text}
-    </p>
-  `;
-}
-
-
-  // for (let i = 0; i < subtext.length; i++) {
-  //   let p = document.createElement("p");
-  //   p.textContent = `<p id="test" >${subtext[i].text}</p>`;
-  //   historieOmrådet.appendChild(p);
-  // }
-}
-
-function loadThoughts(thoughts) {
-  // let h1 = document.getElementById("h_1");
-  // let h2 = document.getElementById("h_2");
-  // let h3 = document.getElementById("h_3");
-  // let h4 = document.getElementById("h_4");
-  // let h5 = document.getElementById("h_5");
-  
-  // elements.innerHTML= ""
-  
-  // h1.innerHTML = "";
-  // h2.innerHTML = "";
-  // h4.innerHTML = "";
-  // h5.innerHTML = "";
-  
-  // const elements = [h1, h2, h4, h5];
-  
-  
-  // for (let index = 0; index < thoughts.length; index++) {
-  //   elements[index].innerHTML += `<p>${thoughts[index].text}</p>`
-    
-  // }
-
-  for (let i = 0; i < thoughts.length; i++) {
-    let marginStyle = "0 auto 0 0"; 
-
-    if (thoughts[i].position === "right") {
-      marginStyle = "0 0 0 auto"; 
-    } else if (thoughts[i].position === "center") {
-      marginStyle = "0 auto";
-    }
-
-    
-    historieOmrådet.innerHTML += `
-    <p class="thoughts" data-person="${thoughts[i].person}" id="${thoughts[i].id}" style="margin: ${marginStyle};">
-    ${thoughts[i].text}
-    </p>
-    `
-
-}
-}
-
-function loadTalk(talk) {
- for (let i = 0; i < talk.length; i++) {
-  let marginStyle = "0 auto 0 0"; 
-
-  if (talk[i].position === "right") {
-    marginStyle = "0 0 0 auto"; 
-  } else if (talk[i].position === "center") {
-    marginStyle = "0 auto";
-  }
-
-  historieOmrådet.innerHTML += `
-    <p class="talk" data-person="${talk[i].person}" id="${talk[i].id}" style="margin: ${marginStyle};">
-      ${talk[i].text}
+    <p class="${type}" data-person="${element[i].person}" id="${element[i].id}" style="margin: ${marginStyle};">
+      ${element[i].text}
     </p>
   `;
 }
@@ -326,6 +255,25 @@ function loadChoices(choices) {
   console.log("ETTER FOR");
 }
 
+function loadImage(scene) {
+
+  console.log("PRØVER Å LASTE INN BILDET");
+  console.log(scene.image);
+
+  bildeOmrådet.innerHTML = `<img id="bakgrunds_bilde" src="${scene.image}" alt="">`;
+  // for (let i = 0; i < scene.length; i++) {
+
+  //   console.log(`PRØVER Å PRINTE UT ${scene[i].image}`)
+
+  //   bildeOmrådet.innerHTML = `<img id="bakgrunds_bilde" src="../img/Hovedperson går.png" alt="">`;
+    
+    
+    
+  // }
+
+
+}
+
 
 function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
@@ -338,7 +286,8 @@ function loadScene(sceneNumber) {
   console.log("TØMT OMRÅDET");
   
   if (scene.subtext.length > 0) {
-    loadSubText(subtext);
+        marginStyle(subtext, "subtext")
+    // loadSubText(subtext);
   } 
   // else {
   //   let i1 = document.getElementById("info_1");
@@ -351,12 +300,18 @@ function loadScene(sceneNumber) {
   // }
   
   if(scene.thoughts.length > 0) {
-    loadThoughts(thoughts)
+    // loadThoughts(thoughts)
+    marginStyle(thoughts, "thoughts")
   } 
   
   if(scene.talk.length > 0) {
-    loadTalk(talk)
+    // loadTalk(talk)
+        marginStyle(talk, "talk")
   } 
+
+  if(scene.image.length > 0) {
+    loadImage(scene)
+  }
 
   if (!scene.choices) {
     setTimeout(() => {
