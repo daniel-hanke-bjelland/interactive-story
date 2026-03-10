@@ -66,7 +66,7 @@ const historie = [
     subtext: [
       {
         text: "William walks past a couple who are getting engaged. Ola Nordman!",
-        id:"nr:_1",
+        id:"nr_1",
         position: "center"
       },
       {
@@ -186,10 +186,12 @@ const historie = [
       {
         text: "yes",
         backgroundColor: "green",
+        id:"nr_2"
       },
       {
         text: "no",
         backgroundColor: "red",
+        id:"nr_3"
       },
     ],
   },
@@ -301,12 +303,36 @@ function loadTalk(talk) {
 }
 }
 
+function loadChoices(choices) {
+  console.log("PRØVER Å LASTE INN VALG");
+
+  historieOmrådet.innerHTML += `
+  <div id="buttonAiria"></div>
+  `;
+
+  let knappOmmrådet = document.getElementById("buttonAiria");
+
+  for (let i = 0; i < choices.length; i++) {
+
+    knappOmmrådet.innerHTML += `
+    <button class="${choices[i].text}" id="${choices[i].id} " >
+    ${choices[i].text}
+    </button>
+    `;
+    console.log("ETTER PRINTET UT, INNE I FOR");
+    
+    
+  }
+  console.log("ETTER FOR");
+}
+
 
 function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
   let talk = scene.talk;
+  let choices = scene.choices;
 
   historieOmrådet.innerHTML = "";
   console.log("TØMT OMRÅDET");
@@ -339,6 +365,7 @@ function loadScene(sceneNumber) {
     }, 3000);
   } else {
     // add buttons with an onclick to handle which scene to go to
+    loadChoices(choices)
   }
   
 }
