@@ -90,6 +90,13 @@ body{
     /* border: 1px solid black ; */
 }
 
+#buttonAiria {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    margin-top: 40px;
+}
+
 /* Tester nytt start */
 #right {
     display: flex;
@@ -126,6 +133,36 @@ body{
     border: 2px dashed #30011E;
 }
 
+.yes{
+    background-color: #1B9437;
+    color: #605F5E;
+    font-size: 30px;
+    width: 120px;
+    height: 60px;
+    border: 0px solid black;
+    border-radius: 10px;
+}
+
+.no {
+    background-color: #E85943;
+    color: #605F5E;
+    font-size: 30px;
+    width: 120px;
+    height: 60px;
+    border: 0px solid black;
+    border-radius: 10px;
+}
+
+.yes:hover{
+    background-color: transparent;
+    color: #1B9437;
+}
+
+.no:hover{
+    background-color: transparent; 
+    color: #E85943;
+}
+
 [data-person="William"] {
     background-color: #B5C9D1;
 }
@@ -147,23 +184,23 @@ body{
 }
 
 #nr_1 {
-    order: 1;
+    order: 0;
 }
 
 #nr_2 {
-    order: 2;
+    order: 1;
 }
 
 #nr_3 {
-    order: 3;
+    order: 2;
 }
 
 #nr_4 {
-    order: 4;
+    order: 3;
 }
 
 #nr_5 {
-    order: 5;
+    order: 4;
 }
 
 /* Tester nytt slutt */
