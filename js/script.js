@@ -185,16 +185,547 @@ const historie = [
     choices: [
       {
         text: "yes",
-        backgroundColor: "green",
         id:"nr_2"
       },
       {
         text: "no",
-        backgroundColor: "red",
         id:"nr_3"
       },
     ],
   },
+  {
+    id: 7,
+    image: "../img/pa_benken_4.png",
+    subtext: [],
+    thoughts: [],
+    talk: [{
+      text: "Do you mean what you´re saying?",
+      id: "nr_1",
+      position: "right",
+      person: "Girl"
+    }]
+  },
+  {
+    id: 8,
+    image: "../img/pa_benken_4.png",
+    subtext: [
+      {
+        text: "Choice: Be honest and say that you don’t mean it, or lie?",
+        id:"nr_1",
+        position: "center"
+      },
+    ],
+    thoughts: [],
+    talk: [],
+    choices: [
+      {
+        text: "yes",
+        id:"nr_2"
+      },
+      {
+        text: "no",
+        id:"nr_3"
+      },
+    ],
+  },
+  {
+    id: 9,
+    image: "../img/pa_benken_4.png",
+    subtext: [
+      {
+        text: "The girl becomes extremely happy.",
+        id: "nr_1",
+        position: "center"
+      },
+    ],
+    thoughts: [],
+    talk: [
+      {
+        text: "Thank you so much.",
+        id: "nr_2",
+        position: "right",
+        person: "Girl"
+      },
+      {
+        text: "We’re already like Bonnie and Clyde, and I really like you.",
+        id: "nr_3",
+        position: "right",
+        person: "Girl"
+      },
+      {
+        text: "...",
+        id: "nr_4",
+        position: "left",
+        person: "William"
+      }
+    ],
+
+  },
+  {
+    id: 10,
+    image: "../img/pa_benken_4.png",
+    subtext: [],
+    thoughts: [
+      {
+        text: "What should I do?",
+        id: "nr_1",
+        position: "left",
+        person: "William"
+      },
+      {
+        text: "Is she joking? She has to be joking.",
+        id: "nr_2",
+        position: "left",
+        person: "William"
+      },
+      {
+        text: "We’re like black and white!",
+        id: "nr_3",
+        position: "left",
+        person: "William"
+      },
+    ],
+    talk: [],
+  },
+  {
+    id: 11,
+    image: "../img/kryss_1.png",
+    subtext: [
+      {
+        text: "William stands up and leaves without saying anything.",
+        id: "nr_1",
+        position: "center",
+      },
+      {
+        text: "He continues alone to the right at the crossroads, past everyone enjoying themselves in the park.",
+        id: "nr_2",
+        position: "center",
+      },
+    ],
+    thoughts: [],
+    talk: [],
+  },
+  {
+    id: 12,
+    image: "../img/hovedperson_går.png",
+    subtext: [],
+    thoughts: [
+      {
+        text: `I drift through days like distant dust,  Among their laughter, light, and trust.  Smiles shimmer, soft and bright - But I stand still, outside their light. Voices weave in warm embrace, While I wear a wordless face. Friendly fingers, fleeting flame, Yet every heart feels just the same. Cold confusion coils inside,  A silent storm I cannot hide.  Feelings flicker, faint and far - Like broken beams from a dying star. Why can they care so clean, so clear,  While I am locked behind my fear?  I search for sense, for spark, for sign -  But no soft sympathy is mine. A hollow hope, a heavy art: To want connection - without a heart.`,
+        id: "nr_1",
+        position: "left",
+        person: "William"
+      }
+    ],
+    talk: [],
+  },
+  {
+      id: 13,
+      image: "../img/jacob_hel.png",
+      subtext: [],
+      thoughts: [
+        {
+          text: "Isn’t that Jakob from class B?",
+          id: "nr_1",
+          position: "left",
+          person: "William"
+        }
+      ],
+      talk: []
+  },
+  {
+      id: 14,
+      image: "../img/jacob_hel.png",
+      subtext: [
+        {
+          text: "Choice: Should William try to give Jacob a handshake?",
+          id: "nr_1",
+          position: "center",
+        }
+      ],
+    thoughts: [],
+    talk: [],
+    choices: [
+      {
+        text: "yes",
+        id:"nr_2"
+      },
+      {
+        text: "no",
+        id:"nr_3"
+      },
+     ],
+  },
+  {
+      id: 15,
+      image: "../img/de_hilser.png",
+      subtext: [{
+        text: "Both of them light up when they greet.",
+        id: "nr_1",
+        position: "center",
+     }],
+     thoughts: [],
+     talk: [
+      {
+        text: "The school project we have now is so difficult, and everyone in the class hates it.",
+        id: "nr_2",
+        position: "left",
+        person: "William"
+      },
+      {
+        text: "Yeah, but it’s fun.",
+        id: "nr_3",
+        position: "right",
+        person: "Jacob"
+      },
+      {
+        text: "The teacher is so funny!",
+        id: "nr_4",
+        position: "right",
+        person: "Jacob"
+      }
+     ]
+  },
+  { 
+    id: 16,
+      image: "../img/de_hilser.png",
+      subtext: [],
+      thoughts: [
+        {
+          text: "Huh, funny?",
+          id: "nr_3",
+          position: "left",
+          person: "William"
+        },
+        {
+          text: "What is that sound he’s making?",
+          id: "nr_3",
+          position: "left",
+          person: "William"
+        }
+      ],
+      talk: [
+      {
+        text: "Remember the jokes about the cat and the water?",
+        id: "nr_1",
+        position: "right",
+        person: "Jacob"
+      },
+      {
+        text: "Ha! Ha! Ha!",
+        id: "nr_2",
+        position: "right",
+        person: "Jacob"
+      },
+      ]
+  },
+  { 
+    id: 17,
+      image: "../img/de_hilser.png",
+      subtext: [
+        {
+          text: "Jacob grows angry.",
+          id: "nr_2",
+          position: "center"
+        },
+        {
+          text: "Jacob walks away.",
+          id: "nr_4",
+          position: "center"
+        }
+      ],
+      thoughts: [],
+      talk: [
+      {
+        text: "She only told a story about a cat. Why are you making such strange noises?",
+        id: "nr_1",
+        position: "left",
+        person: "William"
+      },
+      {
+        text: "You’re just like the cat—against everything and everyone.",
+        id: "nr_3",
+        position: "right",
+        person: "Jacob"
+      },
+      ]
+  },
+  { 
+    id: 18,
+      image: "../img/de_hilser.png",
+      subtext: [
+        {
+          text: "William is left standing there, alone.",
+          id: "nr_1",
+          position: "center"
+        },
+      ],
+      thoughts: [],
+      talk: []
+  },
+  { 
+    id: 19,
+      image: "../img/blir_sinna_forid_de_ikke_hilser.png",
+      subtext: [],
+      thoughts: [],
+      talk: [
+      {
+        text: "I’m just trying to be nice to you, but you can’t even manage to be kind for once.",
+        id: "nr_1",
+        position: "right",
+        person: "Jacob"
+      },
+      {
+        text: "Fine — just stay the way you are.",
+        id: "nr_2",
+        position: "right",
+        person: "Jacob"
+      },
+      ]
+  },
+  { 
+    id: 20,
+      image: "../img/pa_benken_3.png",
+      subtext: [
+        {
+          text: "The girl becomes very upset and again starts to cry.",
+          id: "nr_1",
+          position: "center"
+        },
+        {
+          text: "William wants to say something.",
+          id: "nr_4",
+          position: "center"
+        }
+      ],
+      thoughts: [ 
+        {
+          text: "Why am I like this?",
+          id: "nr_2",
+          position: "right",
+          person: "Girl"
+        },
+        {
+          text: "Why can’t I just stop living with the feeling that everyone hates me?",
+          id: "nr_3",
+          position: "right",
+          person: "Girl"
+        },
+        {
+          text: "What should I say?",
+          id: "nr_5",
+          position: "left",
+          person: "William"
+        }
+      ],
+      talk: []
+  }, 
+  { 
+    id: 21,
+      image: "../img/pa_benken_3.png",
+      subtext: [
+        {
+          text: "William tries to say something, but no sound comes out of his mouth.",
+          id: "nr_1",
+          position: "center"
+        },
+        {
+          text: "William stands up, waves, and walks away.",
+          id: "nr_3",
+          position: "center"
+        }
+      ],
+      thoughts: [ 
+        {
+          text: "I can’t do it.",
+          id: "nr_2",
+          position: "left",
+          person: "William"
+        }
+      ],
+      talk: []
+  },
+  {
+    id: 22,
+    image: "../img/kryss_2.png",
+    subtext: [
+      {
+        text: "He turns left at the crossroads and continues alone past everyone enjoying themselves in the park.",
+        id: "nr_1",
+        position: "center",
+      },
+    ],
+    thoughts: [],
+    talk: [],
+  },
+  {
+    id: 23,
+    image: "../img/hovedperson_går.png",
+    subtext: [],
+    thoughts: [{
+      text: "What is wrong with me?",
+      id: "nr_1",
+      position: "left",
+      person: "William"
+    }],
+    talk: [],
+  },
+  {
+    id: 24,
+    image: "../img/hovedperson_går.png",
+    subtext: [],
+    thoughts: [
+      {
+        text: `I drift through days like distant dust,  Among their laughter, light, and trust.  Smiles shimmer, soft and bright - But I stand still, outside their light. Voices weave in warm embrace, While I wear a wordless face. Friendly fingers, fleeting flame, Yet every heart feels just the same. Cold confusion coils inside,  A silent storm I cannot hide.  Feelings flicker, faint and far - Like broken beams from a dying star. Why can they care so clean, so clear,  While I am locked behind my fear?  I search for sense, for spark, for sign -  But no soft sympathy is mine. A hollow hope, a heavy art: To want connection - without a heart.`,
+        id: "nr_1",
+        position: "left",
+        person: "William"
+      }
+    ],
+    talk: [],
+  },
+  {
+    id: 25,
+    image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
+    subtext: [
+      {
+        text: "Suddenly, his train of thought is interrupted when a small boy falls and hits himself right in front of him.",
+        id: "nr_1",
+        position: "center"
+      }
+    ],
+    thoughts: [],
+    talk: [],
+  },
+  {
+      id: 26,
+      image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
+      subtext: [
+        {
+          text: "Choice: Should he help the boy, (if not; walk past)?",
+          id: "nr_1",
+          position: "center",
+        }
+      ],
+    thoughts: [],
+    talk: [],
+    choices: [
+      {
+        text: "yes",
+        id:"nr_2"
+      },
+      {
+        text: "no",
+        id:"nr_3"
+      },
+     ],
+  },
+  {
+    id: 27,
+    image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
+    subtext: [
+      {
+        text: "William bends down to help the boy.",
+        id: "nr_1",
+        position: "center"
+      }
+    ],
+    thoughts: [],
+    talk: [
+      {
+        text: "Are you okay?",
+        id: "nr_2",
+        position: "left",
+        person: "William"
+      },
+      {
+        text: "I am like a shoelace.",
+        id: "nr_3",
+        position: "right",
+        person: "Boy"
+      },
+      {
+        text: "Can you help me up?",
+        id: "nr_4",
+        position: "right",
+        person: "Boy"
+      }
+    ]
+
+  },
+  {
+    id: 28,
+    image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
+    subtext: [
+      {
+        text: "Now they are standing next to each other.",
+        id: "nr_1",
+        position: "center"
+      }
+    ],
+    thoughts: [
+    {
+      text: "What do you do now?",
+      id: "nr_2",
+      position: "left",
+      person: "William"
+    },
+    {
+      text: "Should I stand here or leave?",
+      id: "nr_3",
+      position: "left",
+      person: "William"
+    }
+  ],
+    talk: [
+      {
+        text: "Thank you very much for the help, may I give you a hug?",
+        id: "nr_4",
+        position: "right",
+        person: "Boy"
+      }
+    ]
+
+  },
+  {
+    id: 29,
+    image: "../img/liten_og_hovedperosn_gir_hveradnre_en_klemm_.png",
+    subtext: [
+      {
+        text: "Should I stand here or leave?",
+        id: "nr_1",
+        position: "center"
+      }
+    ],
+    thoughts: [],
+    talk: []
+  },
+  {
+    id: 30,
+    image: "../img/hovedperson_går.png",
+    subtext: [
+      {
+        text: "William walks past the crying boy and is alone again.",
+        id: "nr_1",
+        postion: "center"
+      }
+    ],
+    thoughts: [
+      {
+        text: "It is normal not to feel anything in situations like this.",
+        id: "nr_2",
+        postion: "left",
+        person: "William"
+      },
+      {
+        text: "The most important thing is that I am myself.",
+        id: "nr_3",
+        postion: "left",
+        person: "William"
+      }
+    ],
+    talk: []
+  }
 ];
 
 // console.log(historie[5]);
