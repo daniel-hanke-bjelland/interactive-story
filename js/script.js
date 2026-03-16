@@ -59,6 +59,7 @@ const historie = [
     ],
     thoughts: [],
     talk: [],
+    
   },
   {
     id: 2,
@@ -97,6 +98,7 @@ const historie = [
       },
     ],
     talk: [],
+    
   },
   {
     id: 3,
@@ -117,6 +119,7 @@ const historie = [
       },
     ],
     talk: [],
+    
   },
   {
     id: 4,
@@ -137,6 +140,7 @@ const historie = [
         person: "Girl"
       },
     ],
+    
   },
   {
     id: 5,
@@ -169,6 +173,7 @@ const historie = [
       },
     ],
     talk: [],
+    
   },
   {
     id: 6,
@@ -185,11 +190,13 @@ const historie = [
     choices: [
       {
         text: "yes",
-        id:"nr_2"
+        id:"nr_2",
+        nextId: 7
       },
       {
         text: "no",
-        id:"nr_3"
+        id:"nr_3",
+        nextId: 20
       },
     ],
   },
@@ -203,7 +210,8 @@ const historie = [
       id: "nr_1",
       position: "right",
       person: "Girl"
-    }]
+    }],
+    
   },
   {
     id: 8,
@@ -220,11 +228,13 @@ const historie = [
     choices: [
       {
         text: "yes",
-        id:"nr_2"
+        id:"nr_2", 
+        nextId: 9
       },
       {
         text: "no",
-        id:"nr_3"
+        id:"nr_3",
+        nextId: 20
       },
     ],
   },
@@ -259,7 +269,7 @@ const historie = [
         person: "William"
       }
     ],
-
+    
   },
   {
     id: 10,
@@ -286,6 +296,7 @@ const historie = [
       },
     ],
     talk: [],
+    
   },
   {
     id: 11,
@@ -304,6 +315,7 @@ const historie = [
     ],
     thoughts: [],
     talk: [],
+    
   },
   {
     id: 12,
@@ -318,6 +330,7 @@ const historie = [
       }
     ],
     talk: [],
+    
   },
   {
       id: 13,
@@ -331,7 +344,8 @@ const historie = [
           person: "William"
         }
       ],
-      talk: []
+      talk: [],
+      
   },
   {
       id: 14,
@@ -348,11 +362,13 @@ const historie = [
     choices: [
       {
         text: "yes",
-        id:"nr_2"
+        id:"nr_2",
+        nextId: 15
       },
       {
         text: "no",
-        id:"nr_3"
+        id:"nr_3",
+        nextId: 19
       },
      ],
   },
@@ -384,7 +400,8 @@ const historie = [
         position: "right",
         person: "Jacob"
       }
-     ]
+     ],
+     
   },
   { 
     id: 16,
@@ -417,7 +434,8 @@ const historie = [
         position: "right",
         person: "Jacob"
       },
-      ]
+      ],
+      
   },
   { 
     id: 17,
@@ -448,7 +466,8 @@ const historie = [
         position: "right",
         person: "Jacob"
       },
-      ]
+      ],
+      
   },
   { 
     id: 18,
@@ -461,7 +480,8 @@ const historie = [
         },
       ],
       thoughts: [],
-      talk: []
+      talk: [],
+      
   },
   { 
     id: 19,
@@ -481,7 +501,8 @@ const historie = [
         position: "right",
         person: "Jacob"
       },
-      ]
+      ],
+      
   },
   { 
     id: 20,
@@ -518,7 +539,8 @@ const historie = [
           person: "William"
         }
       ],
-      talk: []
+      talk: [],
+      
   }, 
   { 
     id: 21,
@@ -543,7 +565,8 @@ const historie = [
           person: "William"
         }
       ],
-      talk: []
+      talk: [],
+      
   },
   {
     id: 22,
@@ -557,6 +580,7 @@ const historie = [
     ],
     thoughts: [],
     talk: [],
+    
   },
   {
     id: 23,
@@ -569,6 +593,7 @@ const historie = [
       person: "William"
     }],
     talk: [],
+    
   },
   {
     id: 24,
@@ -583,6 +608,7 @@ const historie = [
       }
     ],
     talk: [],
+    
   },
   {
     id: 25,
@@ -596,6 +622,7 @@ const historie = [
     ],
     thoughts: [],
     talk: [],
+    
   },
   {
       id: 26,
@@ -612,11 +639,13 @@ const historie = [
     choices: [
       {
         text: "yes",
-        id:"nr_2"
+        id:"nr_2",
+        nextId: 27
       },
       {
         text: "no",
-        id:"nr_3"
+        id:"nr_3",
+        nextId: 30
       },
      ],
   },
@@ -684,7 +713,8 @@ const historie = [
         position: "right",
         person: "Boy"
       }
-    ]
+    ],
+    
 
   },
   {
@@ -698,7 +728,8 @@ const historie = [
       }
     ],
     thoughts: [],
-    talk: []
+    talk: [],
+    
   },
   {
     id: 30,
@@ -724,7 +755,8 @@ const historie = [
         person: "William"
       }
     ],
-    talk: []
+    talk: [],
+    
   }
 ];
 
@@ -764,26 +796,27 @@ function marginStyle(element, type) {
 }
 
 function loadChoices(choices) {
-  console.log("PRØVER Å LASTE INN VALG");
+        console.log("PRØVER Å LASTE INN VALG");
+      
+      
+      historieOmrådet.innerHTML += `
+      <div id="buttonAiria"></div>
+      `;
 
-  historieOmrådet.innerHTML += `
-  <div id="buttonAiria"></div>
-  `;
+      let knappOmmrådet = document.getElementById("buttonAiria");
+      
+      for (let i = 0; i < choices.length; i++) {
+        // console.log(choices[i].nextId);
 
-  let knappOmmrådet = document.getElementById("buttonAiria");
-
-  for (let i = 0; i < choices.length; i++) {
-
-    knappOmmrådet.innerHTML += `
-    <button class="${choices[i].text}" id="${choices[i].id} " >
-    ${choices[i].text}
-    </button>
-    `;
-    console.log("ETTER PRINTET UT, INNE I FOR");
-    
-    
-  }
-  console.log("ETTER FOR");
+        knappOmmrådet.innerHTML += `
+        <button class="${choices[i].text}" id="${choices[i].id}" onclick="loadScene(${(choices[i].nextId - 1)})" >
+        ${choices[i].text}
+        </button>
+        `;
+        console.log("ETTER PRINTET UT, INNE I FOR");
+        
+      }
+      console.log("ETTER FOR");
 }
 
 function loadImage(scene) {
@@ -837,26 +870,42 @@ function loadScene(sceneNumber) {
   
   if(scene.talk.length > 0) {
     // loadTalk(talk)
-        marginStyle(talk, "talk")
+    marginStyle(talk, "talk")
   } 
 
   if(scene.image.length > 0) {
     loadImage(scene)
   }
 
-  if (!scene.choices) {
+  // if (scene.choices.length > 0) {
+    // loadChoices(choices)
+  //   console.log(sceneNumber);
+  // } else if(!scene.choices)  {
+  //   setTimeout(() => {
+  //     loadScene(sceneNumber + 1);
+  //     console.log(sceneNumber);
+  //   }, 100);
+  // }
+
+  if (!scene.choices || scene.choices.length <= 0 ) {
     setTimeout(() => {
       loadScene(sceneNumber + 1);
       console.log("scene2");
-    }, 3000);
+    }, 100);
   } else {
     // add buttons with an onclick to handle which scene to go to
     loadChoices(choices)
+    
   }
-  
+
+
 }
 
-loadScene(0);
+
+
+loadScene(0)
+
+// ${sceneNumber = choices.nextId}
 
 
 
