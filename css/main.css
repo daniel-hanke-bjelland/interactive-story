@@ -66,6 +66,9 @@ body{
 
 #bakgrunds_bilde{
     width: 100%;
+    transition: eas;
+    animation-name: easeIn;
+    animation-duration: 2s;
 }
 
 #right {
@@ -103,6 +106,7 @@ body{
     height: 60px;
     border: 0px solid black;
     border-radius: 10px;
+     cursor: pointer;
 }
 
 .no {
@@ -113,6 +117,7 @@ body{
     height: 60px;
     border: 0px solid black;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .yes:hover{
@@ -130,7 +135,10 @@ body{
     width: 100%;
     justify-content: space-evenly;
     margin-top: 40px;
+
 }
+
+
 
 [data-person="William"] {
     background-color: #B5C9D1;
@@ -256,4 +264,14 @@ label {
 @font-face {
     font-family: Signika_light;
     src: url(../font/Signika/static/Signika-Light.ttf);
+}
+
+@keyframes easeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
 }
