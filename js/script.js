@@ -771,11 +771,6 @@ console.log(bildeOmrådet)
 
 
 
-
-
-
-
-
 function marginStyle(element, type) {
 
  for (let i = 0; i < element.length; i++) {
@@ -898,12 +893,23 @@ function loadScene(sceneNumber) {
     
   }
 
-
+  console.log(scene.id);
+  localStorage.setItem("posisjon", scene.id);
+  
 }
 
 
+if (localStorage.getItem("posisjon") === null) {
+  console.log("DEN ER ikke I LOCAL STORAGE");
+  loadScene(0);
+} else {
+  console.log("DEN finnes I LOCAL STORAGE");
+  loadScene((localStorage.getItem("posisjon") - 1));
+}
 
-loadScene(0)
+// loadScene(0);
+
+
 
 // ${sceneNumber = choices.nextId}
 
