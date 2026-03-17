@@ -738,7 +738,7 @@ const historie = [
       {
         text: "William walks past the crying boy and is alone again.",
         id: "nr_1",
-        postion: "center"
+        position: "center"
       }
     ],
     thoughts: [
@@ -766,8 +766,10 @@ const historie = [
 
 let historieOmrådet = document.getElementById("right");
 let bildeOmrådet = document.getElementsByClassName("left")[0];
+// let wrapper_1 = document.getElementsByClassName("wrapper_1")[0];
 
 console.log(bildeOmrådet)
+// console.log(wrapper_1);
 
 
 
@@ -833,7 +835,6 @@ function loadImage(scene) {
 
 }
 
-
 function loadScene(sceneNumber) {
 
   console.log(sceneNumber)
@@ -841,18 +842,15 @@ function loadScene(sceneNumber) {
 
   if(scene === undefined) {
 
-        historieOmrådet.innerHTML += `
-      <div id="buttonAiria"></div>
-      `;
-
-      let knappOmmrådet = document.getElementById("buttonAiria");
-    knappOmmrådet.innerHTML += `
-        <button class=""  onclick="loadScene(0)" >
-        Go to start
-        </button>
+    historieOmrådet.innerHTML += `
+        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+       Play again
+        </p>
         `;
+
     return;
   }
+
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
   let talk = scene.talk;
@@ -903,7 +901,7 @@ function loadScene(sceneNumber) {
     setTimeout(() => {
       loadScene(sceneNumber + 1);
       console.log("scene2");
-    }, 100);
+    }, 3000);
   } else {
     // add buttons with an onclick to handle which scene to go to
     loadChoices(choices)
