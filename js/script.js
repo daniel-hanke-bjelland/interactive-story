@@ -45,8 +45,8 @@ const historie = [
     id: 1,
     image: "../img/hovedperson_går.png",
     // description: "Lorem ipsum",
-    subtext: [
-      {
+subtext: [
+[      {
         text: `Welcomme ${user.navn}!`,
         id: "nr_1",
         position: "center"
@@ -56,6 +56,25 @@ const historie = [
         id: "nr_2",
         position: "center"
       },
+    ], [      {
+        text: `Welcomme ${user.navn}!`,
+        id: "nr_1",
+        position: "center"
+      },
+      {
+        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
+        id: "nr_2",
+        position: "center"
+      },], [      {
+        text: `Welcomme ${user.navn}!`,
+        id: "nr_1",
+        position: "center"
+      },
+      {
+        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
+        id: "nr_2",
+        position: "center"
+      },]
     ],
     thoughts: [],
     talk: [],
