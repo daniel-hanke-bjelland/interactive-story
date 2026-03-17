@@ -57,21 +57,21 @@ subtext: [
         position: "center"
       },
     ], [      {
-        text: `Welcomme ${user.navn}!`,
+        text: "Dashed border around the text boxes = thoughts",
         id: "nr_1",
         position: "center"
       },
       {
-        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
+        text: "No border around the text box = speech",
         id: "nr_2",
         position: "center"
       },], [      {
-        text: `Welcomme ${user.navn}!`,
+        text: "It is a warm and pleasant summer evening in Hyde Park, London.",
         id: "nr_1",
         position: "center"
       },
       {
-        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
+        text: "William has been walking for almost an hour, and he has never seen so many people enjoying themselves in the park before.",
         id: "nr_2",
         position: "center"
       },]
@@ -878,10 +878,13 @@ function loadScene(sceneNumber) {
   historieOmrådet.innerHTML = "";
   console.log("TØMT OMRÅDET");
   
-  if (scene.subtext.length > 0) {
-        marginStyle(subtext, "subtext")
-    // loadSubText(subtext);
-  } 
+  // if (scene.subtext.length > 0) {
+  //       marginStyle(subtext, "subtext")
+  //   // loadSubText(subtext);
+  // } 
+
+
+
   // else {
   //   let i1 = document.getElementById("info_1");
   //   let i2 = document.getElementById("info_2");
@@ -906,6 +909,13 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
+ 
+    if (scene.choices && scene.choices.length > 0) {
+    loadChoices(scene.choices);
+  } else {
+    setTimeout(() => loadScene(sceneNumber + 1), 3000);
+  }
+  
   // if (scene.choices.length > 0) {
     // loadChoices(choices)
   //   console.log(sceneNumber);
