@@ -771,11 +771,6 @@ console.log(bildeOmrådet)
 
 
 
-
-
-
-
-
 function marginStyle(element, type) {
 
  for (let i = 0; i < element.length; i++) {
@@ -840,7 +835,24 @@ function loadImage(scene) {
 
 
 function loadScene(sceneNumber) {
+
+  console.log(sceneNumber)
   let scene = historie[sceneNumber];
+
+  if(scene === undefined) {
+
+        historieOmrådet.innerHTML += `
+      <div id="buttonAiria"></div>
+      `;
+
+      let knappOmmrådet = document.getElementById("buttonAiria");
+    knappOmmrådet.innerHTML += `
+        <button class=""  onclick="loadScene(0)" >
+        Go to start
+        </button>
+        `;
+    return;
+  }
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
   let talk = scene.talk;
@@ -898,12 +910,23 @@ function loadScene(sceneNumber) {
     
   }
 
-
+  console.log(scene.id);
+  localStorage.setItem("posisjon", scene.id);
+  
 }
 
 
+if (parseInt(localStorage.getItem("posisjon")) === null) {
+  console.log("DEN ER ikke I LOCAL STORAGE");
+  loadScene(0);
+} else {
+  console.log("DEN finnes I LOCAL STORAGE");
+  loadScene((localStorage.getItem("posisjon") - 1));
+}
 
-loadScene(0)
+// loadScene(0);
+
+
 
 // ${sceneNumber = choices.nextId}
 
