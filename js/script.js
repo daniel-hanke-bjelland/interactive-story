@@ -875,7 +875,17 @@ function loadScene(sceneNumber) {
   }
 
   console.log(scene.id);
-  localStorage.setItem("posisjon", scene.id);
+  // localStorage.setItem("posisjon", scene.id);
+
+  const position = scene.id;
+  console.log(position + "POSITION");
+
+  // console.log(user);
+
+  user = ({...user, position });
+  // console.log(user);
+  localStorage.setItem("bruker", JSON.stringify(user));
+
 
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
@@ -916,13 +926,19 @@ function loadScene(sceneNumber) {
   
 }
 
-
-if (parseInt(localStorage.getItem("posisjon")) === null) {
+if (JSON.parse(localStorage.getItem("bruker"))?.position === undefined) {
   console.log("DEN ER ikke I LOCAL STORAGE");
+  // console.log("HVA SKJER?")
   loadScene(0);
 } else {
+  
+  let user = JSON.parse(localStorage.getItem("bruker"));
+  console.log(user);
+
+  console.log(typeof(user.position));
+
   console.log("DEN finnes I LOCAL STORAGE");
-  loadScene((localStorage.getItem("posisjon") - 1));
+  loadScene(parseInt(user.position));
 }
 
 document.addEventListener("keydown", (event) => {
