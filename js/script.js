@@ -795,18 +795,12 @@ const historie = [
   }
 ];
 
-// console.log(historie[5]);
-
-// let området = document.getElementById("right");
 
 let historieOmrådet = document.getElementById("right");
 let bildeOmrådet = document.getElementsByClassName("left")[0];
 // let wrapper_1 = document.getElementsByClassName("wrapper_1")[0];
 
 console.log(bildeOmrådet)
-// console.log(wrapper_1);
-
-// let timeOut = true;
 
 let currentScene = 0;
 
@@ -846,7 +840,6 @@ function loadChoices(choices) {
       let knappOmmrådet = document.getElementById("buttonAiria");
       
       for (let i = 0; i < choices.length; i++) {
-        // console.log(choices[i].nextId);
 
         knappOmmrådet.innerHTML += `
         <button class="${choices[i].text}" id="${choices[i].id}" onclick="loadScene(${(choices[i].nextId - 1)})" >
@@ -865,16 +858,6 @@ function loadImage(scene) {
   console.log(scene.image);
 
   bildeOmrådet.innerHTML = `<img id="bakgrunds_bilde" src="${scene.image}" alt="">`;
-  // for (let i = 0; i < scene.length; i++) {
-
-  //   console.log(`PRØVER Å PRINTE UT ${scene[i].image}`)
-
-  //   bildeOmrådet.innerHTML = `<img id="bakgrunds_bilde" src="../img/Hovedperson går.png" alt="">`;
-    
-    
-    
-  // }
-
 
 }
 
@@ -891,15 +874,9 @@ function loadScene(sceneNumber) {
 
  
   if(scene === undefined) {
-    
-    // canPress = false;
-
-    
     console.log("DETTE ER SISTE SIDE");
 
     document.removeEventListener("keydown", handleKeydown);
-
-    // timeOut = false;
 
     historieOmrådet.innerHTML += `
         <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
@@ -914,16 +891,6 @@ function loadScene(sceneNumber) {
   user = ({...user, position });
   localStorage.setItem("bruker", JSON.stringify(user));
 
-  // console.log(scene.id);
-  // localStorage.setItem("posisjon", scene.id);
-
-
-  // console.log(user);
-
-
-  // console.log(user);
-
-
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
   let talk = scene.talk;
@@ -934,15 +901,15 @@ function loadScene(sceneNumber) {
   
   if (scene.subtext.length > 0) {
     marginStyle(subtext, "subtext")
-    // loadSubText(subtext);
+
   } 
   if(scene.thoughts.length > 0) {
-    // loadThoughts(thoughts)
+
     marginStyle(thoughts, "thoughts")
   } 
   
   if(scene.talk.length > 0) {
-    // loadTalk(talk)
+
     marginStyle(talk, "talk")
   } 
 
@@ -967,30 +934,7 @@ function loadScene(sceneNumber) {
   return;
 }
 
-  // if(scene.id === 20) {
-    
-  //   // canPress = false;
-
-  //   clearTimeout(timeoutId);
-
-    
-  //   console.log("DETTE ER SISTE SIDE");
-
-  //   document.removeEventListener("keydown", handleKeydown);
-
-
-  //   historieOmrådet.innerHTML += `
-  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-  //      Play again
-  //       </p>
-  //       `;
-
-  //   return;
-  // }
-
     if(scene.id === 21) {
-    
-    // canPress = false;
 
     clearTimeout(timeoutId);
 
@@ -1011,12 +955,12 @@ function loadScene(sceneNumber) {
 
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
-    // console.log(sceneNumber);
+
   } else {
     timeoutId = setTimeout(() => {
       loadScene(currentScene + 1);
     }, 10000);
-    // console.log("bytter scene automatisk");
+
   }
 
 
@@ -1024,37 +968,25 @@ function loadScene(sceneNumber) {
   
 }
 
-// const savedUser = JSON.parse(localStorage.getItem("bruker"));
+
 
 let savedUser = JSON.parse(localStorage.getItem("bruker")) || {};
 
 if (savedUser.position) {
   console.log("DEN ER ikke I LOCAL STORAGE");
-  // console.log("HVA SKJER?")
-  // loadScene(0);
   let startIndex = historie.findIndex(s => s.id === savedUser.position);
   loadScene(startIndex !== -1 ? startIndex : 0);
 } else {
-  
-  // user = savedUser;
-  // console.log(user);
 
-  // console.log(typeof(user.position));
-
-  // console.log("DEN finnes I LOCAL STORAGE");
-  // loadScene(parseInt(user.position));
   loadScene(0);
 }
 
 function handleKeydown(event) {
   if (!canPress) {return};
-
   
   let scene = historie[currentScene];
-  // console.log(scene); 
 
   if (scene.choices && scene.choices.length > 0) { return};
-  // const choices = scene?.choices || [];
 
   if ( 
     event.key === "ArrowRight" ||
@@ -1088,5 +1020,3 @@ function handleKeydown(event) {
     }
 
     document.addEventListener("keydown", handleKeydown);
-
-// loadScene(0);
