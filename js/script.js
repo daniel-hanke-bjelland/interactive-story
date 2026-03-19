@@ -889,16 +889,6 @@ function loadScene(sceneNumber) {
     marginStyle(subtext, "subtext")
     // loadSubText(subtext);
   } 
-  // else {
-  //   let i1 = document.getElementById("info_1");
-  //   let i2 = document.getElementById("info_2");
-  //   let i3 = document.getElementById("info_3");
-    
-  //   i1.innerHTML = "";
-  //   i2.innerHTML = "";
-  //   i3.innerHTML = "";
-  // }
-  
   if(scene.thoughts.length > 0) {
     // loadThoughts(thoughts)
     marginStyle(thoughts, "thoughts")
@@ -923,20 +913,6 @@ function loadScene(sceneNumber) {
     },10000);
     // console.log("bytter scene automatisk");
   }
-
-  // if (!scene.choices || scene.choices.length <= 0 ) {
-  //   setTimeout(() => {
-  //     loadScene(sceneNumber + 1);
-  //     console.log("scene2");
-  //   }, 3000);
-  // } else {
-  //   // add buttons with an onclick to handle which scene to go to
-  //   loadChoices(choices)
-    
-  // }
-  
-  
- 
   
 }
 
@@ -987,22 +963,7 @@ document.addEventListener("keydown", (event) => {
         canPress = true;
       }, 2000);
     };
-
-    // console.log("bytter scene automatisk")
-    
-    // setTimeout(() => {
-      //   loadScene(currentScene +1)
-      // },400);
       
     })
 
 // loadScene(0);
-
-
-
-// ${sceneNumber = choices.nextId}
-
-
-
-
-// loadThoughts(0);
