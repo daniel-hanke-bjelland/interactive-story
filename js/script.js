@@ -22,6 +22,8 @@ function opppretKonto() {
   }
 }
 
+let user = JSON.parse(localStorage.getItem("bruker"));
+
 function loggIn() {
   let navn = document.getElementById("name_sign_in").value;
   let passord = document.getElementById("password_sign_in").value;
@@ -38,6 +40,7 @@ function loggIn() {
   }
   
 }
+
 
 const historie = [
   {
@@ -806,7 +809,6 @@ console.log(bildeOmrådet)
 let currentScene = 0;
 
 let canPress = true;
-let isReaload = true;
 
 
 function marginStyle(element, type) {
@@ -933,7 +935,7 @@ function loadScene(sceneNumber) {
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
     // console.log(sceneNumber);
-  } else if(!isReaload) {
+  } else {
     setTimeout(() => {
       loadScene(currentScene + 1);
       console.log(currentScene);
@@ -941,7 +943,6 @@ function loadScene(sceneNumber) {
     // console.log("bytter scene automatisk");
   }
   
-  isReaload = false;
 }
 
 // const savedUser = JSON.parse(localStorage.getItem("bruker"));
