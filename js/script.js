@@ -507,7 +507,7 @@ const historie = [
   },
   { 
     id: 20,
-      image: "../img/de_hilser.png",
+      image: "../img/William hel.png",
       subtext: [
         {
           text: "William is left standing there, alone.",
@@ -1000,7 +1000,7 @@ function handleKeydown(event) {
 
       setTimeout(() => {
         canPress = true;
-      }, 2000);
+      }, 2500);
     }
 
   if ( 
@@ -1014,7 +1014,7 @@ function handleKeydown(event) {
 
       setTimeout(() => {
         canPress = true;
-      }, 2000);
+      }, 2500);
     };
       
     }
