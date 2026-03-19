@@ -789,7 +789,9 @@ console.log(bildeOmrådet)
 // console.log(wrapper_1);
 
 let currentScene = 0;
+
 let canPress = true;
+let isReaload = true;
 
 
 function marginStyle(element, type) {
@@ -874,17 +876,17 @@ function loadScene(sceneNumber) {
     return;
   }
 
-  console.log(scene.id);
+  // console.log(scene.id);
   // localStorage.setItem("posisjon", scene.id);
 
   const position = scene.id;
-  console.log(position + "POSITION");
-
-  // console.log(user);
-
   user = ({...user, position });
-  // console.log(user);
   localStorage.setItem("bruker", JSON.stringify(user));
+
+  // console.log(user);
+
+
+  // console.log(user);
 
 
   let subtext = scene.subtext;
@@ -916,7 +918,7 @@ function loadScene(sceneNumber) {
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
     // console.log(sceneNumber);
-  } else {
+  } else if(!isReaload) {
     setTimeout(() => {
       loadScene(currentScene + 1);
       console.log(currentScene);
@@ -924,21 +926,29 @@ function loadScene(sceneNumber) {
     // console.log("bytter scene automatisk");
   }
   
+  isReaload = false;
 }
 
-if (JSON.parse(localStorage.getItem("bruker"))?.position === undefined) {
+// const savedUser = JSON.parse(localStorage.getItem("bruker"));
+
+let savedUser = JSON.parse(localStorage.getItem("bruker")) || {};
+
+if (savedUser.position) {
   console.log("DEN ER ikke I LOCAL STORAGE");
   // console.log("HVA SKJER?")
-  loadScene(0);
+  // loadScene(0);
+  let startIndex = historie.findIndex(s => s.id === savedUser.position);
+  loadScene(startIndex !== -1 ? startIndex : 0);
 } else {
   
-  let user = JSON.parse(localStorage.getItem("bruker"));
-  console.log(user);
+  // user = savedUser;
+  // console.log(user);
 
-  console.log(typeof(user.position));
+  // console.log(typeof(user.position));
 
-  console.log("DEN finnes I LOCAL STORAGE");
-  loadScene(parseInt(user.position));
+  // console.log("DEN finnes I LOCAL STORAGE");
+  // loadScene(parseInt(user.position));
+  loadScene(0);
 }
 
 document.addEventListener("keydown", (event) => {
