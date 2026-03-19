@@ -936,7 +936,7 @@ function loadScene(sceneNumber) {
     setTimeout(() => {
       loadScene(currentScene + 1);
       console.log(currentScene);
-    },7000);
+    },10000);
     // console.log("bytter scene automatisk");
   }
 
