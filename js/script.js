@@ -757,7 +757,7 @@ const historie = [
     image: "../img/liten_og_hovedperosn_gir_hveradnre_en_klemm_.png",
     subtext: [
       {
-        text: "Should I stand here or leave?",
+        text: "They give each other a hug.",
         id: "nr_1",
         position: "center"
       }
@@ -806,9 +806,14 @@ let bildeOmrådet = document.getElementsByClassName("left")[0];
 console.log(bildeOmrådet)
 // console.log(wrapper_1);
 
+// let timeOut = true;
+
 let currentScene = 0;
 
 let canPress = true;
+
+let timeoutId;
+
 
 
 function marginStyle(element, type) {
@@ -875,14 +880,26 @@ function loadImage(scene) {
 
 function loadScene(sceneNumber) {
 
+  clearTimeout(timeoutId);
+  
   console.log(sceneNumber)
-
+  
   currentScene = sceneNumber;
   console.log(currentScene);
   
   let scene = historie[sceneNumber];
 
+ 
   if(scene === undefined) {
+    
+    // canPress = false;
+
+    
+    console.log("DETTE ER SISTE SIDE");
+
+    document.removeEventListener("keydown", handleKeydown);
+
+    // timeOut = false;
 
     historieOmrådet.innerHTML += `
         <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
@@ -893,12 +910,13 @@ function loadScene(sceneNumber) {
     return;
   }
 
-  // console.log(scene.id);
-  // localStorage.setItem("posisjon", scene.id);
-
   const position = scene.id;
   user = ({...user, position });
   localStorage.setItem("bruker", JSON.stringify(user));
+
+  // console.log(scene.id);
+  // localStorage.setItem("posisjon", scene.id);
+
 
   // console.log(user);
 
@@ -932,16 +950,77 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
+  let sluttScener = [20,21,31];
+
+  if (sluttScener.includes(scene.id)) {
+
+  clearTimeout(timeoutId);
+
+  document.removeEventListener("keydown", handleKeydown);
+
+  historieOmrådet.innerHTML += `
+    <p class="PåNytt" id="nr_5" onclick="loadScene(0)">
+      Play again
+    </p>
+  `;
+
+  return;
+}
+
+  // if(scene.id === 20) {
+    
+  //   // canPress = false;
+
+  //   clearTimeout(timeoutId);
+
+    
+  //   console.log("DETTE ER SISTE SIDE");
+
+  //   document.removeEventListener("keydown", handleKeydown);
+
+
+  //   historieOmrådet.innerHTML += `
+  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+  //      Play again
+  //       </p>
+  //       `;
+
+  //   return;
+  // }
+
+    if(scene.id === 21) {
+    
+    // canPress = false;
+
+    clearTimeout(timeoutId);
+
+    
+    console.log("DETTE ER SISTE SIDE");
+
+    document.removeEventListener("keydown", handleKeydown);
+
+
+    historieOmrådet.innerHTML += `
+        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+       Play again
+        </p>
+        `;
+
+    return;
+  }
+
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
     // console.log(sceneNumber);
   } else {
-    setTimeout(() => {
+    timeoutId = setTimeout(() => {
       loadScene(currentScene + 1);
-      console.log(currentScene);
-    },10000);
+    }, 10000);
     // console.log("bytter scene automatisk");
   }
+
+
+
   
 }
 
@@ -967,7 +1046,7 @@ if (savedUser.position) {
   loadScene(0);
 }
 
-document.addEventListener("keydown", (event) => {
+function handleKeydown(event) {
   if (!canPress) {return};
 
   
@@ -1006,6 +1085,8 @@ document.addEventListener("keydown", (event) => {
       }, 2000);
     };
       
-    })
+    }
+
+    document.addEventListener("keydown", handleKeydown);
 
 // loadScene(0);
