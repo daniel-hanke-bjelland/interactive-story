@@ -44,9 +44,8 @@ const historie = [
   {
     id: 1,
     image: "../img/hovedperson_går.png",
-    // description: "Lorem ipsum",
-subtext: [
-[      {
+    subtext: [
+    {
         text: `Welcomme ${user.navn}!`,
         id: "nr_1",
         position: "center"
@@ -56,32 +55,47 @@ subtext: [
         id: "nr_2",
         position: "center"
       },
-    ], [      {
-        text: `Welcomme ${user.navn}!`,
-        id: "nr_1",
-        position: "center"
-      },
-      {
-        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
-        id: "nr_2",
-        position: "center"
-      },], [      {
-        text: `Welcomme ${user.navn}!`,
-        id: "nr_1",
-        position: "center"
-      },
-      {
-        text: "Your character's name is William, and he is 16 years old. He grew up in Manchester, but now lives in London.",
-        id: "nr_2",
-        position: "center"
-      },]
     ],
     thoughts: [],
     talk: [],
-    
+    choices: []
   },
   {
     id: 2,
+    image: "../img/hovedperson_går.png",
+    subtext: [{
+      text: "Dashed border around the text boxes = thoughts",
+      id: "nr_1",
+      position: "center"
+    },
+    {
+      text: "No border around the text box = speech",
+      id: "nr_2",
+      position: "center"
+    }],
+    thoughts: [],
+    talk: [],
+    choices: []
+  },
+  { 
+    id: 3,
+    image: "../img/hovedperson_går.png",
+    subtext: [{
+      text: "It is a warm and pleasant summer evening in Hyde Park, London.",
+      id: "nr_1",
+      position: "center"
+    },
+    {
+      text: "William has been walking for almost an hour, and he has never seen so many people enjoying themselves in the park before.",
+      id: "nr_2",
+      position: "center"
+    }],
+    thoughts: [],
+    talk: [],
+    choices: []
+  },
+  {
+    id: 4,
     image: "../img/frieri.png",
     subtext: [
       {
@@ -117,10 +131,10 @@ subtext: [
       },
     ],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 3,
+    id: 5,
     image: "../img/pa_benken_2.png",
     subtext: [
       {
@@ -138,10 +152,10 @@ subtext: [
       },
     ],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 4,
+    id: 6,
     image: "../img/pa_benken_3.png",
     subtext: [
       {
@@ -159,10 +173,10 @@ subtext: [
         person: "Girl"
       },
     ],
-    
+    choices: []
   },
   {
-    id: 5,
+    id: 7,
     image: "../img/pa_benken_3.png",
     subtext: [
       {
@@ -192,10 +206,10 @@ subtext: [
       },
     ],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 6,
+    id: 8,
     image: "../img/pa_benken_3.png",
     subtext: [
       {
@@ -210,17 +224,17 @@ subtext: [
       {
         text: "yes",
         id:"nr_2",
-        nextId: 7
+        nextId: 9
       },
       {
         text: "no",
         id:"nr_3",
-        nextId: 20
+        nextId: 22
       },
     ],
   },
   {
-    id: 7,
+    id: 9,
     image: "../img/pa_benken_4.png",
     subtext: [],
     thoughts: [],
@@ -230,10 +244,10 @@ subtext: [
       position: "right",
       person: "Girl"
     }],
-    
+    choices: []
   },
   {
-    id: 8,
+    id: 10,
     image: "../img/pa_benken_4.png",
     subtext: [
       {
@@ -248,17 +262,18 @@ subtext: [
       {
         text: "yes",
         id:"nr_2", 
-        nextId: 9
+        nextId: 11
       },
       {
         text: "no",
         id:"nr_3",
-        nextId: 20
+        nextId: 22
       },
     ],
+    choices: []
   },
   {
-    id: 9,
+    id: 11,
     image: "../img/pa_benken_4.png",
     subtext: [
       {
@@ -288,10 +303,10 @@ subtext: [
         person: "William"
       }
     ],
-    
+    choices: []
   },
   {
-    id: 10,
+    id: 12,
     image: "../img/pa_benken_4.png",
     subtext: [],
     thoughts: [
@@ -315,10 +330,10 @@ subtext: [
       },
     ],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 11,
+    id: 13,
     image: "../img/kryss_1.png",
     subtext: [
       {
@@ -334,10 +349,10 @@ subtext: [
     ],
     thoughts: [],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 12,
+    id: 14,
     image: "../img/hovedperson_går.png",
     subtext: [],
     thoughts: [
@@ -349,10 +364,10 @@ subtext: [
       }
     ],
     talk: [],
-    
+    choices: []
   },
   {
-      id: 13,
+      id: 15,
       image: "../img/jacob_hel.png",
       subtext: [],
       thoughts: [
@@ -364,10 +379,10 @@ subtext: [
         }
       ],
       talk: [],
-      
+      choices: []
   },
   {
-      id: 14,
+      id: 16,
       image: "../img/jacob_hel.png",
       subtext: [
         {
@@ -382,17 +397,17 @@ subtext: [
       {
         text: "yes",
         id:"nr_2",
-        nextId: 15
+        nextId: 17
       },
       {
         text: "no",
         id:"nr_3",
-        nextId: 19
+        nextId: 21
       },
      ],
   },
   {
-      id: 15,
+      id: 17,
       image: "../img/de_hilser.png",
       subtext: [{
         text: "Both of them light up when they greet.",
@@ -420,10 +435,10 @@ subtext: [
         person: "Jacob"
       }
      ],
-     
+     choices: []
   },
   { 
-    id: 16,
+    id: 18,
       image: "../img/de_hilser.png",
       subtext: [],
       thoughts: [
@@ -454,10 +469,10 @@ subtext: [
         person: "Jacob"
       },
       ],
-      
+    choices: []
   },
   { 
-    id: 17,
+    id: 19,
       image: "../img/de_hilser.png",
       subtext: [
         {
@@ -486,10 +501,10 @@ subtext: [
         person: "Jacob"
       },
       ],
-      
+      choices: []
   },
   { 
-    id: 18,
+    id: 20,
       image: "../img/de_hilser.png",
       subtext: [
         {
@@ -500,10 +515,10 @@ subtext: [
       ],
       thoughts: [],
       talk: [],
-      
+      choices: []
   },
   { 
-    id: 19,
+    id: 21,
       image: "../img/blir_sinna_forid_de_ikke_hilser.png",
       subtext: [],
       thoughts: [],
@@ -521,10 +536,10 @@ subtext: [
         person: "Jacob"
       },
       ],
-      
+      choices: []
   },
   { 
-    id: 20,
+    id: 22,
       image: "../img/pa_benken_3.png",
       subtext: [
         {
@@ -559,10 +574,10 @@ subtext: [
         }
       ],
       talk: [],
-      
+      choices: []
   }, 
   { 
-    id: 21,
+    id: 23,
       image: "../img/pa_benken_3.png",
       subtext: [
         {
@@ -585,10 +600,10 @@ subtext: [
         }
       ],
       talk: [],
-      
+      choices: []
   },
   {
-    id: 22,
+    id: 24,
     image: "../img/kryss_2.png",
     subtext: [
       {
@@ -599,10 +614,10 @@ subtext: [
     ],
     thoughts: [],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 23,
+    id: 25,
     image: "../img/hovedperson_går.png",
     subtext: [],
     thoughts: [{
@@ -612,10 +627,10 @@ subtext: [
       person: "William"
     }],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 24,
+    id: 26,
     image: "../img/hovedperson_går.png",
     subtext: [],
     thoughts: [
@@ -627,10 +642,10 @@ subtext: [
       }
     ],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 25,
+    id: 27,
     image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
     subtext: [
       {
@@ -641,10 +656,10 @@ subtext: [
     ],
     thoughts: [],
     talk: [],
-    
+    choices: []
   },
   {
-      id: 26,
+      id: 28,
       image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
       subtext: [
         {
@@ -659,17 +674,17 @@ subtext: [
       {
         text: "yes",
         id:"nr_2",
-        nextId: 27
+        nextId: 29
       },
       {
         text: "no",
         id:"nr_3",
-        nextId: 30
+        nextId: 32
       },
      ],
   },
   {
-    id: 27,
+    id: 29,
     image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
     subtext: [
       {
@@ -698,11 +713,11 @@ subtext: [
         position: "right",
         person: "Boy"
       }
-    ]
-
+    ],
+    choices: []
   },
   {
-    id: 28,
+    id: 30,
     image: "../img/liten_gutt_som_har_falt_og_slått_seg,_og_hovedperosn_ser_det.png",
     subtext: [
       {
@@ -733,11 +748,10 @@ subtext: [
         person: "Boy"
       }
     ],
-    
-
+    choices: []
   },
   {
-    id: 29,
+    id: 31,
     image: "../img/liten_og_hovedperosn_gir_hveradnre_en_klemm_.png",
     subtext: [
       {
@@ -748,10 +762,10 @@ subtext: [
     ],
     thoughts: [],
     talk: [],
-    
+    choices: []
   },
   {
-    id: 30,
+    id: 32,
     image: "../img/hovedperson_går.png",
     subtext: [
       {
@@ -775,7 +789,7 @@ subtext: [
       }
     ],
     talk: [],
-    
+    choices: []
   }
 ];
 
@@ -790,6 +804,8 @@ let bildeOmrådet = document.getElementsByClassName("left")[0];
 console.log(bildeOmrådet)
 // console.log(wrapper_1);
 
+let currentScene = 0;
+let canPress = true;
 
 
 function marginStyle(element, type) {
@@ -857,6 +873,10 @@ function loadImage(scene) {
 function loadScene(sceneNumber) {
 
   console.log(sceneNumber)
+
+  currentScene = sceneNumber;
+  console.log(currentScene);
+  
   let scene = historie[sceneNumber];
 
   if(scene === undefined) {
@@ -870,6 +890,9 @@ function loadScene(sceneNumber) {
     return;
   }
 
+  console.log(scene.id);
+  localStorage.setItem("posisjon", scene.id);
+
   let subtext = scene.subtext;
   let thoughts = scene.thoughts;
   let talk = scene.talk;
@@ -879,7 +902,7 @@ function loadScene(sceneNumber) {
   console.log("TØMT OMRÅDET");
   
   if (scene.subtext.length > 0) {
-        marginStyle(subtext, "subtext")
+    marginStyle(subtext, "subtext")
     // loadSubText(subtext);
   } 
   // else {
@@ -906,29 +929,30 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
-  // if (scene.choices.length > 0) {
-    // loadChoices(choices)
-  //   console.log(sceneNumber);
-  // } else if(!scene.choices)  {
-  //   setTimeout(() => {
-  //     loadScene(sceneNumber + 1);
-  //     console.log(sceneNumber);
-  //   }, 100);
-  // }
-
-  if (!scene.choices || scene.choices.length <= 0 ) {
-    setTimeout(() => {
-      loadScene(sceneNumber + 1);
-      console.log("scene2");
-    }, 3000);
-  } else {
-    // add buttons with an onclick to handle which scene to go to
+  if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
-    
+    // console.log(sceneNumber);
+  } else {
+    setTimeout(() => {
+      loadScene(currentScene + 1);
+      console.log(currentScene);
+    },7000);
+    // console.log("bytter scene automatisk");
   }
 
-  console.log(scene.id);
-  localStorage.setItem("posisjon", scene.id);
+  // if (!scene.choices || scene.choices.length <= 0 ) {
+  //   setTimeout(() => {
+  //     loadScene(sceneNumber + 1);
+  //     console.log("scene2");
+  //   }, 3000);
+  // } else {
+  //   // add buttons with an onclick to handle which scene to go to
+  //   loadChoices(choices)
+    
+  // }
+  
+  
+ 
   
 }
 
@@ -940,6 +964,53 @@ if (parseInt(localStorage.getItem("posisjon")) === null) {
   console.log("DEN finnes I LOCAL STORAGE");
   loadScene((localStorage.getItem("posisjon") - 1));
 }
+
+document.addEventListener("keydown", (event) => {
+  if (!canPress) {return};
+
+  
+  let scene = historie[currentScene];
+  // console.log(scene); 
+
+  if (scene.choices && scene.choices.length > 0) { return};
+  // const choices = scene?.choices || [];
+
+  if ( 
+    event.key === "ArrowRight" ||
+    event.key === "ArrowDown" ||
+    event.key === " " || 
+    event.key === "Enter") 
+    {
+      canPress = false;
+
+      loadScene(currentScene + 1);
+
+      setTimeout(() => {
+        canPress = true;
+      }, 2000);
+    }
+
+  if ( 
+    event.key === "ArrowLeft" ||
+    event.key === "ArrowUp" ||
+    event.key === "Backspace") 
+    {
+      canPress = false;
+
+      loadScene(currentScene - 1);
+
+      setTimeout(() => {
+        canPress = true;
+      }, 2000);
+    };
+
+    // console.log("bytter scene automatisk")
+    
+    // setTimeout(() => {
+      //   loadScene(currentScene +1)
+      // },400);
+      
+    })
 
 // loadScene(0);
 
