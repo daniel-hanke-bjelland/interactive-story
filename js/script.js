@@ -916,7 +916,7 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
-  let sluttScener = [20,21,31,32];
+  const sluttScener = [20,21,31,32];
 
   if (sluttScener.includes(scene.id)) {
 
