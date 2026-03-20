@@ -272,7 +272,6 @@ const historie = [
         nextId: 22
       },
     ],
-    choices: []
   },
   {
     id: 11,
@@ -876,13 +875,14 @@ function loadScene(sceneNumber) {
   if(scene === undefined) {
     console.log("DETTE ER SISTE SIDE");
 
-    document.removeEventListener("keydown", handleKeydown);
+     canPress = false;
+    // document.removeEventListener("keydown", handleKeydown);
 
-    historieOmrådet.innerHTML += `
-        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-       Play again
-        </p>
-        `;
+    // historieOmrådet.innerHTML += `
+    //     <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+    //    Play again
+    //     </p>
+    //     `;
 
     return;
   }
@@ -917,16 +917,18 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
-  let sluttScener = [20,21,31];
+  const sluttScener = [20,21,31,32];
 
   if (sluttScener.includes(scene.id)) {
 
   clearTimeout(timeoutId);
 
-  document.removeEventListener("keydown", handleKeydown);
+  // document.removeEventListener("keydown", handleKeydown);
+
+  canPress = false;
 
   historieOmrådet.innerHTML += `
-    <p class="PåNytt" id="nr_5" onclick="loadScene(0)">
+    <p class="PåNytt" id="nr_5" onclick="loadScene(0); resettKeydown();">
       Play again
     </p>
   `;
@@ -934,24 +936,24 @@ function loadScene(sceneNumber) {
   return;
 }
 
-    if(scene.id === 21) {
+  //   if(scene.id === 21) {
 
-    clearTimeout(timeoutId);
+  //   clearTimeout(timeoutId);
 
     
-    console.log("DETTE ER SISTE SIDE");
+  //   console.log("DETTE ER SISTE SIDE");
 
-    document.removeEventListener("keydown", handleKeydown);
+  //   document.removeEventListener("keydown", handleKeydown);
 
 
-    historieOmrådet.innerHTML += `
-        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-       Play again
-        </p>
-        `;
+  //   historieOmrådet.innerHTML += `
+  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+  //      Play again
+  //       </p>
+  //       `;
 
-    return;
-  }
+  //   return;
+  // }
 
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
@@ -1019,4 +1021,14 @@ function handleKeydown(event) {
       
     }
 
-    document.addEventListener("keydown", handleKeydown);
+    
+function resettKeydown() {
+  console.log("Skurdd den på igjen !!!!!!!!")
+  // document.addEventListener("keydown", handleKeydown);
+  console.log(canPress);
+  canPress = true;
+  console.log(canPress);
+}
+
+
+document.addEventListener("keydown", handleKeydown);
