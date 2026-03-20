@@ -1,45 +1,4 @@
-function opppretKonto() {
-
-  let navn = document.getElementById("name_sign_up").value;
-  let epost = document.getElementById("epost_sign_up").value;
-  let nickname = document.getElementById("nickname_sign_up").value;
-  let passord = document.getElementById("password_sign_up").value;
-
-  if (navn !== "" && epost !== "" && nickname !== "" && passord !== "") {
-    let bruker = {
-      navn,
-      epost,
-      nickname,
-      passord,
-    };
-
-    localStorage.setItem("bruker", JSON.stringify(bruker));
-
-    window.location.replace("../html/historien.html");
-  } else {
-    document.getElementById("wrapper_4_out").innerHTML =
-    `You must fill in all of the fields. Alredy have an acount? <a href="./Logg in.html" id="konto_link" >Sign in her</a>`;
-  }
-}
-
 let user = JSON.parse(localStorage.getItem("bruker"));
-
-function loggIn() {
-  let navn = document.getElementById("name_sign_in").value;
-  let passord = document.getElementById("password_sign_in").value;
-  
-  console.log(navn,passord);
-  
-  if (navn === user.navn && passord === user.passord ) {
-    console.log("DE ER LIKE");
-    window.location.replace("../html/historien.html");
-  } else {
-    console.log("DE ER ULIKE");
-    document.getElementById("wrapper_4_out").innerHTML =
-    `The name and the pasword is not fiting each other. If you dont have an acount: <a href="./Opprett en konto.html" id="konto_link" >Sign up her</a>`;
-  }
-  
-}
 
 
 const historie = [
@@ -797,7 +756,6 @@ const historie = [
 
 let historieOmrådet = document.getElementById("right");
 let bildeOmrådet = document.getElementsByClassName("left")[0];
-// let wrapper_1 = document.getElementsByClassName("wrapper_1")[0];
 
 console.log(bildeOmrådet)
 
@@ -829,8 +787,6 @@ function marginStyle(element, type) {
 }
 
 function loadChoices(choices) {
-        console.log("PRØVER Å LASTE INN VALG");
-      
       
       historieOmrådet.innerHTML += `
       <div id="buttonAiria"></div>
@@ -845,16 +801,11 @@ function loadChoices(choices) {
         ${choices[i].text}
         </button>
         `;
-        console.log("ETTER PRINTET UT, INNE I FOR");
         
       }
-      console.log("ETTER FOR");
 }
 
 function loadImage(scene) {
-
-  console.log("PRØVER Å LASTE INN BILDET");
-  console.log(scene.image);
 
   bildeOmrådet.innerHTML = `<img id="bakgrunds_bilde" src="${scene.image}" alt="">`;
 
@@ -864,25 +815,14 @@ function loadScene(sceneNumber) {
 
   clearTimeout(timeoutId);
   
-  console.log(sceneNumber)
-  
   currentScene = sceneNumber;
-  console.log(currentScene);
   
   let scene = historie[sceneNumber];
 
  
   if(scene === undefined) {
-    console.log("DETTE ER SISTE SIDE");
 
      canPress = false;
-    // document.removeEventListener("keydown", handleKeydown);
-
-    // historieOmrådet.innerHTML += `
-    //     <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-    //    Play again
-    //     </p>
-    //     `;
 
     return;
   }
@@ -897,19 +837,16 @@ function loadScene(sceneNumber) {
   let choices = scene.choices;
 
   historieOmrådet.innerHTML = "";
-  console.log("TØMT OMRÅDET");
   
   if (scene.subtext.length > 0) {
     marginStyle(subtext, "subtext")
 
   } 
   if(scene.thoughts.length > 0) {
-
     marginStyle(thoughts, "thoughts")
   } 
   
   if(scene.talk.length > 0) {
-
     marginStyle(talk, "talk")
   } 
 
@@ -923,8 +860,6 @@ function loadScene(sceneNumber) {
 
   clearTimeout(timeoutId);
 
-  // document.removeEventListener("keydown", handleKeydown);
-
   canPress = false;
 
   historieOmrådet.innerHTML += `
@@ -936,25 +871,6 @@ function loadScene(sceneNumber) {
   return;
 }
 
-  //   if(scene.id === 21) {
-
-  //   clearTimeout(timeoutId);
-
-    
-  //   console.log("DETTE ER SISTE SIDE");
-
-  //   document.removeEventListener("keydown", handleKeydown);
-
-
-  //   historieOmrådet.innerHTML += `
-  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-  //      Play again
-  //       </p>
-  //       `;
-
-  //   return;
-  // }
-
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
 
@@ -964,22 +880,15 @@ function loadScene(sceneNumber) {
     }, 10000);
 
   }
-
-
-
   
 }
-
-
 
 let savedUser = JSON.parse(localStorage.getItem("bruker")) || {};
 
 if (savedUser.position) {
-  console.log("DEN ER ikke I LOCAL STORAGE");
   let startIndex = historie.findIndex(s => s.id === savedUser.position);
   loadScene(startIndex !== -1 ? startIndex : 0);
 } else {
-
   loadScene(0);
 }
 
@@ -1023,11 +932,7 @@ function handleKeydown(event) {
 
     
 function resettKeydown() {
-  console.log("Skurdd den på igjen !!!!!!!!")
-  // document.addEventListener("keydown", handleKeydown);
-  console.log(canPress);
   canPress = true;
-  console.log(canPress);
 }
 
 
