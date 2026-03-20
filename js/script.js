@@ -272,7 +272,6 @@ const historie = [
         nextId: 22
       },
     ],
-    choices: []
   },
   {
     id: 11,
@@ -873,19 +872,19 @@ function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
 
  
-  if(scene === undefined) {
-    console.log("DETTE ER SISTE SIDE");
+  // if(scene === undefined) {
+  //   console.log("DETTE ER SISTE SIDE");
 
-    document.removeEventListener("keydown", handleKeydown);
+  //   document.removeEventListener("keydown", handleKeydown);
 
-    historieOmrådet.innerHTML += `
-        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-       Play again
-        </p>
-        `;
+  //   historieOmrådet.innerHTML += `
+  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+  //      Play again
+  //       </p>
+  //       `;
 
-    return;
-  }
+  //   return;
+  // }
 
   const position = scene.id;
   user = ({...user, position });
@@ -917,13 +916,15 @@ function loadScene(sceneNumber) {
     loadImage(scene)
   }
 
-  let sluttScener = [20,21,31];
+  let sluttScener = [20,21,31,32];
 
   if (sluttScener.includes(scene.id)) {
 
   clearTimeout(timeoutId);
 
-  document.removeEventListener("keydown", handleKeydown);
+  // document.removeEventListener("keydown", handleKeydown);
+
+  canPress = false;
 
   historieOmrådet.innerHTML += `
     <p class="PåNytt" id="nr_5" onclick="loadScene(0)">
@@ -934,24 +935,24 @@ function loadScene(sceneNumber) {
   return;
 }
 
-    if(scene.id === 21) {
+  //   if(scene.id === 21) {
 
-    clearTimeout(timeoutId);
+  //   clearTimeout(timeoutId);
 
     
-    console.log("DETTE ER SISTE SIDE");
+  //   console.log("DETTE ER SISTE SIDE");
 
-    document.removeEventListener("keydown", handleKeydown);
+  //   document.removeEventListener("keydown", handleKeydown);
 
 
-    historieOmrådet.innerHTML += `
-        <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-       Play again
-        </p>
-        `;
+  //   historieOmrådet.innerHTML += `
+  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+  //      Play again
+  //       </p>
+  //       `;
 
-    return;
-  }
+  //   return;
+  // }
 
   if (scene.choices && scene.choices.length > 0) {
     loadChoices(choices)
