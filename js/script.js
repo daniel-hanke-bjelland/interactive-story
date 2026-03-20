@@ -224,12 +224,12 @@ const historie = [
     talk: [],
     choices: [
       {
-        text: "yes",
+        text: "Yes",
         id:"nr_2",
         nextId: 9
       },
       {
-        text: "no",
+        text: "No",
         id:"nr_3",
         nextId: 22
       },
@@ -262,12 +262,12 @@ const historie = [
     talk: [],
     choices: [
       {
-        text: "yes",
+        text: "Yes",
         id:"nr_2", 
         nextId: 11
       },
       {
-        text: "no",
+        text: "No",
         id:"nr_3",
         nextId: 22
       },
@@ -396,12 +396,12 @@ const historie = [
     talk: [],
     choices: [
       {
-        text: "yes",
+        text: "Yes",
         id:"nr_2",
         nextId: 17
       },
       {
-        text: "no",
+        text: "No",
         id:"nr_3",
         nextId: 21
       },
@@ -673,12 +673,12 @@ const historie = [
     talk: [],
     choices: [
       {
-        text: "yes",
+        text: "Yes",
         id:"nr_2",
         nextId: 29
       },
       {
-        text: "no",
+        text: "No",
         id:"nr_3",
         nextId: 32
       },
