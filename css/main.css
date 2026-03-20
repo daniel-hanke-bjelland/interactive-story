@@ -2,8 +2,23 @@ body{
     background-color: 605F5E;
     margin: 0px;
     font-family: Signika_light;
-    font-weight: thin;
+    /* font-weight: thin; */
 }
+
+/* Fonter start */
+#tittel_landing, #tittel_konto {
+    font-family: inter_bold;
+}
+
+#info_landing, #info_konto {
+    font-family: inter_light;
+}
+
+#Sign_up_p, #Log_in_p, #or_landing {
+    font-family: Signika_bold;
+}
+/* Fonter slutt */
+
 
 /* Landingpage start */
 .wrapper_1_landing {
@@ -19,7 +34,7 @@ body{
     align-items: center;
     top: 40%;
 }
-    
+
 #tittel_landing{
     margin: 0px 0px 5px 0px;
     font-size: 80px;
@@ -78,7 +93,7 @@ body{
     gap: 30px;
 }
 
-.subtext, .thoughts, .talk {
+.subtext, .thoughts, .talk, .PåNytt {
     animation-name: easeIn;
     animation-duration: 2s;
 }
@@ -301,6 +316,22 @@ label {
     font-family: Signika_light;
     src: url(../font/Signika/static/Signika-Light.ttf);
 }
+
+@font-face {
+    font-family: Signika_bold;
+    src: url(../font/Signika/static/Signika-Bold.ttf);
+}
+
+@font-face {
+    font-family: inter_bold;
+    src: url(../font/Inter/static/Inter_28pt-Bold.ttf);
+}
+
+@font-face {
+    font-family: inter_light;
+    src: url(../font/Inter/static/Inter_24pt-Light.ttf);
+}
+
 
 @keyframes easeIn {
     0% {
