@@ -872,19 +872,20 @@ function loadScene(sceneNumber) {
   let scene = historie[sceneNumber];
 
  
-  // if(scene === undefined) {
-  //   console.log("DETTE ER SISTE SIDE");
+  if(scene === undefined) {
+    console.log("DETTE ER SISTE SIDE");
 
-  //   document.removeEventListener("keydown", handleKeydown);
+     canPress = false;
+    // document.removeEventListener("keydown", handleKeydown);
 
-  //   historieOmrådet.innerHTML += `
-  //       <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
-  //      Play again
-  //       </p>
-  //       `;
+    // historieOmrådet.innerHTML += `
+    //     <p class="PåNytt" id="nr_5" onclick="loadScene(0)" >
+    //    Play again
+    //     </p>
+    //     `;
 
-  //   return;
-  // }
+    return;
+  }
 
   const position = scene.id;
   user = ({...user, position });
@@ -927,7 +928,7 @@ function loadScene(sceneNumber) {
   canPress = false;
 
   historieOmrådet.innerHTML += `
-    <p class="PåNytt" id="nr_5" onclick="loadScene(0)">
+    <p class="PåNytt" id="nr_5" onclick="loadScene(0); resettKeydown();">
       Play again
     </p>
   `;
@@ -1020,4 +1021,14 @@ function handleKeydown(event) {
       
     }
 
-    document.addEventListener("keydown", handleKeydown);
+    
+function resettKeydown() {
+  console.log("Skurdd den på igjen !!!!!!!!")
+  // document.addEventListener("keydown", handleKeydown);
+  console.log(canPress);
+  canPress = true;
+  console.log(canPress);
+}
+
+
+document.addEventListener("keydown", handleKeydown);
