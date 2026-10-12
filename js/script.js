@@ -57,7 +57,7 @@ const historie = [
   },
   {
     id: 4,
-    image: "../img/frieri.png",
+    image: "../img/Frieri.png",
     subtext: [
       {
         text: "William walks past a couple who are getting engaged. Ola Nordman!",
