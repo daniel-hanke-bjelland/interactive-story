@@ -7,7 +7,7 @@ const historie = [
     image: "../img/hovedperson_går.png",
     subtext: [
     {
-        text: `Welcomme ${user.navn}!`,
+        text: `Welcomme!`,
         id: "nr_1",
         position: "center"
       },
